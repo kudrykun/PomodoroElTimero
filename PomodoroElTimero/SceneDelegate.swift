@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  PomodoroElTimero
 //
-//  Created by Macbook on 11/11/2019.
+//  Created by Сергей Василенко on 11/11/2019.
 //  Copyright © 2019 Sergey Vasilenko. All rights reserved.
 //
 

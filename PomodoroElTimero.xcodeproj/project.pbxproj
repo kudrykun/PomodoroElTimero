@@ -7,27 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA4D5B7423792F2C00D5D801 /* UserSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB77A4D23792D7000A9B68F /* UserSettingsModel.swift */; };
 		FAB77A3A23792AB200A9B68F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB77A3923792AB200A9B68F /* AppDelegate.swift */; };
 		FAB77A3C23792AB200A9B68F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB77A3B23792AB200A9B68F /* SceneDelegate.swift */; };
-		FAB77A3E23792AB200A9B68F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB77A3D23792AB200A9B68F /* ViewController.swift */; };
+		FAB77A3E23792AB200A9B68F /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB77A3D23792AB200A9B68F /* MainScreenViewController.swift */; };
 		FAB77A4123792AB200A9B68F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB77A3F23792AB200A9B68F /* Main.storyboard */; };
 		FAB77A4323792AB200A9B68F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB77A4223792AB200A9B68F /* Assets.xcassets */; };
 		FAB77A4623792AB200A9B68F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB77A4423792AB200A9B68F /* LaunchScreen.storyboard */; };
+		FAB77A4E23792D7000A9B68F /* UserSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB77A4D23792D7000A9B68F /* UserSettingsModel.swift */; };
+		FAB77A5623792E5400A9B68F /* PomodoroElTimeroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB77A5523792E5400A9B68F /* PomodoroElTimeroTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAB77A5823792E5400A9B68F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAB77A2E23792AB200A9B68F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAB77A3523792AB200A9B68F;
+			remoteInfo = PomodoroElTimero;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FAB77A3623792AB200A9B68F /* PomodoroElTimero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroElTimero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB77A3923792AB200A9B68F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAB77A3B23792AB200A9B68F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAB77A3D23792AB200A9B68F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAB77A3D23792AB200A9B68F /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		FAB77A4023792AB200A9B68F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAB77A4223792AB200A9B68F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAB77A4523792AB200A9B68F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB77A4723792AB200A9B68F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB77A4D23792D7000A9B68F /* UserSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsModel.swift; sourceTree = "<group>"; };
+		FAB77A5323792E5400A9B68F /* PomodoroElTimeroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroElTimeroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAB77A5523792E5400A9B68F /* PomodoroElTimeroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroElTimeroTests.swift; sourceTree = "<group>"; };
+		FAB77A5723792E5400A9B68F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FAB77A3323792AB200A9B68F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAB77A5023792E5400A9B68F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB77A3823792AB200A9B68F /* PomodoroElTimero */,
+				FAB77A5423792E5400A9B68F /* PomodoroElTimeroTests */,
 				FAB77A3723792AB200A9B68F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB77A3623792AB200A9B68F /* PomodoroElTimero.app */,
+				FAB77A5323792E5400A9B68F /* PomodoroElTimeroTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,13 +84,23 @@
 			children = (
 				FAB77A3923792AB200A9B68F /* AppDelegate.swift */,
 				FAB77A3B23792AB200A9B68F /* SceneDelegate.swift */,
-				FAB77A3D23792AB200A9B68F /* ViewController.swift */,
+				FAB77A3D23792AB200A9B68F /* MainScreenViewController.swift */,
 				FAB77A3F23792AB200A9B68F /* Main.storyboard */,
 				FAB77A4223792AB200A9B68F /* Assets.xcassets */,
 				FAB77A4423792AB200A9B68F /* LaunchScreen.storyboard */,
 				FAB77A4723792AB200A9B68F /* Info.plist */,
+				FAB77A4D23792D7000A9B68F /* UserSettingsModel.swift */,
 			);
 			path = PomodoroElTimero;
+			sourceTree = "<group>";
+		};
+		FAB77A5423792E5400A9B68F /* PomodoroElTimeroTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAB77A5523792E5400A9B68F /* PomodoroElTimeroTests.swift */,
+				FAB77A5723792E5400A9B68F /* Info.plist */,
+			);
+			path = PomodoroElTimeroTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +123,24 @@
 			productReference = FAB77A3623792AB200A9B68F /* PomodoroElTimero.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FAB77A5223792E5400A9B68F /* PomodoroElTimeroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAB77A5A23792E5400A9B68F /* Build configuration list for PBXNativeTarget "PomodoroElTimeroTests" */;
+			buildPhases = (
+				FAB77A4F23792E5400A9B68F /* Sources */,
+				FAB77A5023792E5400A9B68F /* Frameworks */,
+				FAB77A5123792E5400A9B68F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAB77A5923792E5400A9B68F /* PBXTargetDependency */,
+			);
+			name = PomodoroElTimeroTests;
+			productName = PomodoroElTimeroTests;
+			productReference = FAB77A5323792E5400A9B68F /* PomodoroElTimeroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +153,10 @@
 				TargetAttributes = {
 					FAB77A3523792AB200A9B68F = {
 						CreatedOnToolsVersion = 11.2;
+					};
+					FAB77A5223792E5400A9B68F = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = FAB77A3523792AB200A9B68F;
 					};
 				};
 			};
@@ -116,6 +174,7 @@
 			projectRoot = "";
 			targets = (
 				FAB77A3523792AB200A9B68F /* PomodoroElTimero */,
+				FAB77A5223792E5400A9B68F /* PomodoroElTimeroTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +190,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAB77A5123792E5400A9B68F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -138,13 +204,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB77A3E23792AB200A9B68F /* ViewController.swift in Sources */,
+				FAB77A3E23792AB200A9B68F /* MainScreenViewController.swift in Sources */,
 				FAB77A3A23792AB200A9B68F /* AppDelegate.swift in Sources */,
 				FAB77A3C23792AB200A9B68F /* SceneDelegate.swift in Sources */,
+				FAB77A4E23792D7000A9B68F /* UserSettingsModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAB77A4F23792E5400A9B68F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAB77A5623792E5400A9B68F /* PomodoroElTimeroTests.swift in Sources */,
+				FA4D5B7423792F2C00D5D801 /* UserSettingsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAB77A5923792E5400A9B68F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAB77A3523792AB200A9B68F /* PomodoroElTimero */;
+			targetProxy = FAB77A5823792E5400A9B68F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FAB77A3F23792AB200A9B68F /* Main.storyboard */ = {
@@ -316,6 +400,46 @@
 			};
 			name = Release;
 		};
+		FAB77A5B23792E5400A9B68F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WDNNR82432;
+				INFOPLIST_FILE = PomodoroElTimeroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vasilenko.PomodoroElTimeroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PomodoroElTimero.app/PomodoroElTimero";
+			};
+			name = Debug;
+		};
+		FAB77A5C23792E5400A9B68F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WDNNR82432;
+				INFOPLIST_FILE = PomodoroElTimeroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vasilenko.PomodoroElTimeroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PomodoroElTimero.app/PomodoroElTimero";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -333,6 +457,15 @@
 			buildConfigurations = (
 				FAB77A4B23792AB200A9B68F /* Debug */,
 				FAB77A4C23792AB200A9B68F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAB77A5A23792E5400A9B68F /* Build configuration list for PBXNativeTarget "PomodoroElTimeroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAB77A5B23792E5400A9B68F /* Debug */,
+				FAB77A5C23792E5400A9B68F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
