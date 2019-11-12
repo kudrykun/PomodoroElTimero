@@ -11,6 +11,8 @@ import UIKit
 public protocol MainScreenViewControllerProtocol where Self: UIViewController {
     func viewDidPressStartButton()
     func viewDidPressStopButton()
+    func viewDidPressPauseButton()
+    func viewDidPressProceedButton()
     func updateCurrentTime()
 }
 
@@ -52,6 +54,7 @@ class MainScreenViewController: UIViewController {
 extension MainScreenViewController: MainScreenViewControllerProtocol {
     func viewDidPressStartButton() {
         customView?.isStartButtonHidden(true)
+        customView?.isPauseButtonHidden(false)
         customView?.isStopButtonHidden(false)
         setupTimerWithInterval()
     }
@@ -59,9 +62,23 @@ extension MainScreenViewController: MainScreenViewControllerProtocol {
     func viewDidPressStopButton() {
         customView?.isStartButtonHidden(false)
         customView?.isStopButtonHidden(true)
+        customView?.isPauseButtonHidden(true)
+        customView?.isProceedButtonHidden(true)
         invalidateTimer()
         currentSessionTime = model.workSessionTime
         setViewTimer(with: currentSessionTime)
+    }
+
+    func viewDidPressPauseButton() {
+        customView?.isPauseButtonHidden(true)
+        customView?.isProceedButtonHidden(false)
+        invalidateTimer()
+    }
+
+    func viewDidPressProceedButton() {
+        customView?.isPauseButtonHidden(false)
+        customView?.isProceedButtonHidden(true)
+        setupTimerWithInterval()
     }
 
     @objc func updateCurrentTime() {

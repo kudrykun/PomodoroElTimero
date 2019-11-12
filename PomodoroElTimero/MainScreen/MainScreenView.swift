@@ -11,6 +11,8 @@ import UIKit
 public protocol MainScreenViewProtocol where Self: UIView {
     func isStartButtonHidden(_ value: Bool)
     func isStopButtonHidden(_ value: Bool)
+    func isPauseButtonHidden(_ value: Bool)
+    func isProceedButtonHidden(_ value: Bool)
     func setTimeLabelText(_ text: String?)
 }
 
@@ -45,6 +47,24 @@ class MainScreenView: UIView {
         return button
     }()
 
+    private let pauseSessionButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Пауза", for: .normal)
+        button.backgroundColor = .red
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(pauseButtonPressed), for: .touchUpInside)
+        return button
+    }()
+
+    private let proceedSessionButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Продолжить", for: .normal)
+        button.backgroundColor = .red
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(proceedButtonPressed), for: .touchUpInside)
+        return button
+    }()
+
     //MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,7 +93,11 @@ class MainScreenView: UIView {
         addSubview(startSessionButton)
 
         stopSessionButton.isHidden = true
+        pauseSessionButton.isHidden = true
+        proceedSessionButton.isHidden = true
         addSubview(stopSessionButton)
+        addSubview(pauseSessionButton)
+        addSubview(proceedSessionButton)
     }
 
     //MARK: - Constraints
@@ -81,6 +105,8 @@ class MainScreenView: UIView {
         setTimeLabelConstraints()
         setStartSessionButtonConstraints()
         setStopSessionButtonConstraints()
+        setPauseSessionButtonConstraints()
+        setProceedSessionButtonConstraints()
     }
 
     private func setTimeLabelConstraints() {
@@ -97,9 +123,21 @@ class MainScreenView: UIView {
     }
 
     private func setStopSessionButtonConstraints() {
-        stopSessionButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        stopSessionButton.leadingAnchor.constraint(equalTo: self.centerXAnchor, constant: 10).isActive = true
         stopSessionButton.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 10).isActive = true
         stopSessionButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/4).isActive = true
+    }
+
+    private func setPauseSessionButtonConstraints() {
+        pauseSessionButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/4).isActive = true
+        pauseSessionButton.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: -10).isActive = true
+        pauseSessionButton.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 10).isActive = true
+    }
+
+    private func setProceedSessionButtonConstraints() {
+        proceedSessionButton.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: -10).isActive = true
+        proceedSessionButton.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 10).isActive = true
+        proceedSessionButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/4).isActive = true
     }
 
     //MARK: - Actions
@@ -111,6 +149,13 @@ class MainScreenView: UIView {
         viewController?.viewDidPressStopButton()
     }
 
+    @objc private func pauseButtonPressed() {
+        viewController?.viewDidPressPauseButton()
+    }
+
+    @objc private func proceedButtonPressed() {
+        viewController?.viewDidPressProceedButton()
+    }
 }
 
 //MARK: - MainScreenViewProtocol
@@ -121,6 +166,14 @@ extension MainScreenView: MainScreenViewProtocol {
 
     func isStopButtonHidden(_ value: Bool) {
         stopSessionButton.isHidden = value
+    }
+
+    func isPauseButtonHidden(_ value: Bool) {
+        pauseSessionButton.isHidden = value
+    }
+
+    func isProceedButtonHidden(_ value: Bool) {
+        proceedSessionButton.isHidden = value
     }
 
     func setTimeLabelText(_ text: String?) {
