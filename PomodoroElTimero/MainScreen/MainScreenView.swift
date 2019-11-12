@@ -11,6 +11,7 @@ import UIKit
 public protocol MainScreenViewProtocol where Self: UIView {
     func isStartButtonHidden(_ value: Bool)
     func isStopButtonHidden(_ value: Bool)
+    func setTimeLabelText(_ text: String?)
 }
 
 class MainScreenView: UIView {
@@ -120,5 +121,9 @@ extension MainScreenView: MainScreenViewProtocol {
 
     func isStopButtonHidden(_ value: Bool) {
         stopSessionButton.isHidden = value
+    }
+
+    func setTimeLabelText(_ text: String?) {
+        timeLabel.text = text
     }
 }
