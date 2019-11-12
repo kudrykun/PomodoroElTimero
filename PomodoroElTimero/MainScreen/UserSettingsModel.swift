@@ -9,8 +9,8 @@
 import Foundation
 
 class UserSettingsModel {
-    public private(set) var workSessionTime: Int = 1500
-    private var restSessionTime: Int = 300
+    public private(set) var workSessionTime: Int = 10 //TODO: Заменить на 1500 перед коммитом
+    private var restSessionTime: Int = 5  //TODO: Заменить на 300 перед коммитом
 
     public func getFormattedTime(from seconds: Int) -> String? {
         guard seconds >= 0 else { return nil }

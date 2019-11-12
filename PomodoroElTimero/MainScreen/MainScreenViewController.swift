@@ -16,6 +16,12 @@ public protocol MainScreenViewControllerProtocol where Self: UIViewController {
     func updateCurrentTime()
 }
 
+public enum TimerState {
+    case notRunning
+    case running
+    case paused
+}
+
 class MainScreenViewController: UIViewController {
     //MARK: - Properties
     private var customView: MainScreenViewProtocol?
@@ -48,42 +54,63 @@ class MainScreenViewController: UIViewController {
         guard let customView = customView else { return }
         customView.setTimeLabelText(model.getFormattedTime(from: seconds))
     }
+
+    //MARK: - Other
+    private func setButtonsWithState(_ state: TimerState) {
+        switch state {
+        case .notRunning:
+            customView?.isStartButtonHidden(false)
+            customView?.isPauseButtonHidden(true)
+            customView?.isStopButtonHidden(true)
+            customView?.isProceedButtonHidden(true)
+        case .running:
+            customView?.isStartButtonHidden(true)
+            customView?.isPauseButtonHidden(false)
+            customView?.isStopButtonHidden(false)
+            customView?.isProceedButtonHidden(true)
+        case .paused:
+            customView?.isStartButtonHidden(true)
+            customView?.isPauseButtonHidden(true)
+            customView?.isStopButtonHidden(false)
+            customView?.isProceedButtonHidden(false)
+        }
+    }
 }
 
 //MARK: - MainScreenViewControllerProtocol
 extension MainScreenViewController: MainScreenViewControllerProtocol {
     func viewDidPressStartButton() {
-        customView?.isStartButtonHidden(true)
-        customView?.isPauseButtonHidden(false)
-        customView?.isStopButtonHidden(false)
+        setButtonsWithState(.running)
         setupTimerWithInterval()
     }
 
     func viewDidPressStopButton() {
-        customView?.isStartButtonHidden(false)
-        customView?.isStopButtonHidden(true)
-        customView?.isPauseButtonHidden(true)
-        customView?.isProceedButtonHidden(true)
+        setButtonsWithState(.notRunning)
         invalidateTimer()
         currentSessionTime = model.workSessionTime
         setViewTimer(with: currentSessionTime)
     }
 
     func viewDidPressPauseButton() {
-        customView?.isPauseButtonHidden(true)
-        customView?.isProceedButtonHidden(false)
+        setButtonsWithState(.paused)
         invalidateTimer()
     }
 
     func viewDidPressProceedButton() {
-        customView?.isPauseButtonHidden(false)
-        customView?.isProceedButtonHidden(true)
+        setButtonsWithState(.running)
         setupTimerWithInterval()
     }
 
     @objc func updateCurrentTime() {
         currentSessionTime = currentSessionTime - 1
-        setViewTimer(with: currentSessionTime)
+        if currentSessionTime < 0 {
+            currentSessionTime = model.workSessionTime
+            invalidateTimer()
+            setViewTimer(with: currentSessionTime)
+            setButtonsWithState(.notRunning)
+        } else {
+            setViewTimer(with: currentSessionTime)
+        }
     }
 }
 
